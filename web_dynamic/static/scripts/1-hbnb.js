@@ -8,7 +8,7 @@ $(function() {
 		}
 		else { delete dict_ids[$(this).attr('data-id')]; }
 
-		$("DIV.amenities h4").text(Object.values(dict_ids).join(', ') || '&nbsp;');		
+		$("DIV.amenities h4").text(Object.values(dict_ids).join(', '));		
 	});
 	
 });
