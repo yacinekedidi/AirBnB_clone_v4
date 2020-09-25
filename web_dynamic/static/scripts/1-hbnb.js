@@ -2,7 +2,7 @@ $(function() {
 	let dict_ids = {};
 	
 	$('div.amenities input').change(function() {
-		if ($(this).checked)
+		if (this.checked)
 		{
 			dict_ids[$(this).attr('data-id')] = $(this).attr('data-name');
 		}
