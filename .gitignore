@@ -1,0 +1,18 @@
+# -*- mode: gitignore; -*-
+*~
+*.out
+*.s
+Betty
+*-main.c
+*-main.py
+_putchar.c
+yo
+*.o
+__pycache__
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
