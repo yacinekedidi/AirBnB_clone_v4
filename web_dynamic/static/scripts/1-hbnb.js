@@ -1,14 +1,11 @@
-$(function() {
-	let dict_ids = {};
-	
-	$('div.amenities input').change(function() {
-		if (this.checked)
-		{
-			dict_ids[$(this).attr('data-id')] = $(this).attr('data-name');
-		}
-		else { delete dict_ids[$(this).attr('data-id')]; }
+$(function () {
+  const dictIds = {};
 
-		$("DIV.amenities h4").text(Object.values(dict_ids).join(', '));		
-	});
-	
+  $('div.amenities input').change(function () {
+    if (this.checked) {
+      dictIds[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else { delete dictIds[$(this).attr('data-id')]; }
+
+    $('DIV.amenities h4').text(Object.values(dictIds).join(', '));
+  });
 });
