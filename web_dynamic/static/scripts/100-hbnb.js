@@ -1,5 +1,8 @@
 $(function () {
   const dictIds = {};
+  const dictIdCity = {};
+  const dictIdState = {};
+  const dictAll = {};
 
   $('div.amenities input').change(function () {
     if (this.checked) {
@@ -9,20 +12,28 @@ $(function () {
     $('DIV.amenities h4').text(Object.values(dictIds).join(', '));
   });
 
-  const dictIdState = {};
-
   $('.state').change(function () {
     if (this.checked) {
       dictIdState[$(this).attr('data-id')] = $(this).attr('data-name');
-    } else { delete dictIdState[$(this).attr('data-id')]; }
-  });
+      dictAll[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else {
+      delete dictIdState[$(this).attr('data-id')];
+      delete dictAll[$(this).attr('data-id')];
+    }
 
-  const dictIdCity = {};
+    $('#sc').text(Object.values(dictAll).join(', '));
+  });
 
   $('.city').change(function () {
     if (this.checked) {
       dictIdCity[$(this).attr('data-id')] = $(this).attr('data-name');
-    } else { delete dictIdCity[$(this).attr('data-id')]; }
+      dictAll[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else {
+      delete dictIdCity[$(this).attr('data-id')];
+      delete dictAll[$(this).attr('data-id')];
+    }
+
+    $('#sc').text(Object.values(dictAll).join(', '));
   });
 
   $.ajax({
