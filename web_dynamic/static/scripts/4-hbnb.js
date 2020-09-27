@@ -104,8 +104,7 @@ $(function () {
               s += '</article>';
             } // FOR
             $('section.places').append(s);
-          }// if
-          else {
+          } else {
             $('.places article').remove();
           }
         } // SUCCESS

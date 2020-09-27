@@ -9,24 +9,21 @@ $(function () {
     $('DIV.amenities h4').text(Object.values(dictIds).join(', '));
   });
 
-
-  const dictId_state = {};
+  const dictIdState = {};
 
   $('.state').change(function () {
     if (this.checked) {
-      dictId_state[$(this).attr('data-id')] = $(this).attr('data-name');
-    } else { delete dictId_state[$(this).attr('data-id')]; }
+      dictIdState[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else { delete dictIdState[$(this).attr('data-id')]; }
   });
 
-
-  const dictId_city = {};
+  const dictIdCity = {};
 
   $('.city').change(function () {
     if (this.checked) {
-      dictId_city[$(this).attr('data-id')] = $(this).attr('data-name');
-    } else { delete dictId_city[$(this).attr('data-id')]; }
+      dictIdCity[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else { delete dictIdCity[$(this).attr('data-id')]; }
   });
-
 
   $.ajax({
     type: 'GET',
@@ -80,15 +77,15 @@ $(function () {
     }
   });
 
-
-
   $('button').click(function () {
     if (Object.keys(dictIds).length === 0) {
       $('.places article').remove();
     } else {
-      const data = { amenities: Object.keys(dictIds), 
-        state: Object.keys(dictId_state), 
-        city: Object.keys(dictId_city) };
+      const data = {
+        amenities: Object.keys(dictIds),
+        state: Object.keys(dictIdState),
+        city: Object.keys(dictIdCity)
+      };
 
       $.ajax({
         type: 'POST',
@@ -135,6 +132,4 @@ $(function () {
       }); // AJAX
     } // else
   });
-
-
 });
