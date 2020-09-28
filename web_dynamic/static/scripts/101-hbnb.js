@@ -197,10 +197,10 @@ $(function () {
     // } // else
   });
 
-  $(function userName (id) {
+  function userName (id) {
     $.get('http://0.0.0.0:5001/api/v1/users/' + id, function (data) {
       const name = data.first_name + ' ' + data.last_name;
       return name;
     });
-  });
+  }
 });
