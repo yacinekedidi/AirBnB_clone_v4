@@ -187,12 +187,12 @@ $(function () {
             $(this).parent('.reviews').children('ul').toggle();
             $(this).text($(this).text() === 'Hide' ? 'Show' : 'Hide');
             ul.empty();
-            });
-          } else {
-            $('.places article').remove();
-          }
-        } // SUCCESS
-      }); // AJAX
-    //} // else
+          });
+        } else {
+          $('.places article').remove();
+        }
+      } // SUCCESS
+    }); // AJAX
+    // } // else
   });
 });
