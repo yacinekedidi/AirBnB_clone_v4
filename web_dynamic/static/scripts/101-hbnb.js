@@ -107,11 +107,10 @@ $(function () {
             if (data.length === 1) { x = 'Review'; } else { x = 'Reviews'; }
             h2.html(data.length + ' ' + x);
           }
-          if (data.length > 0)
-          {
-          $.get('http://0.0.0.0:5001/api/v1/users/' + data[0].user_id, function (data) {
-              $('.reviews .owner').append(data.first_name + ' ' + data.last_name)      
-          });
+          if (data.length > 0) {
+            $.get('http://0.0.0.0:5001/api/v1/users/' + data[0].user_id, function (data) {
+              $('.reviews .owner').append(data.first_name + ' ' + data.last_name);
+            });
           }
         });
         $(this).parent('.reviews').children('ul').toggle();
@@ -190,8 +189,8 @@ $(function () {
                 h2.html(data.length + ' ' + x);
               }
               $.get('http://0.0.0.0:5001/api/v1/users/' + data[0].user_id, function (data) {
-                  $('.reviews .owner').append(data.first_name + ' ' + data.last_name)      
-                });
+                $('.reviews .owner').append(data.first_name + ' ' + data.last_name);
+              });
             });
             $(this).parent('.reviews').children('ul').toggle();
             $(this).text($(this).text() === 'Hide' ? 'Show' : 'Hide');
@@ -204,5 +203,4 @@ $(function () {
     }); // AJAX
     // } // else
   });
-
 });
