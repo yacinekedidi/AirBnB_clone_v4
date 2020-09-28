@@ -177,7 +177,7 @@ $(function () {
                   const ordinals = ['st', 'nd', 'rd'];
                   let n = 'th';
                   if (myDate.getDate() < 4) { n = ordinals[myDate.getDate() - 1]; }
-                  const output = myDate.getDate().ordinalinator() + n + ' ' + (month[myDate.getMonth()]) + ' ' + myDate.getFullYear();
+                  const output = myDate.getDate() + n + ' ' + (month[myDate.getMonth()]) + ' ' + myDate.getFullYear();
                   const li = '<li><h3>From yacine the ' + output + '</h3><p>' + review.text + '</p></li>';
                   ul.append(li);
                   if (data.length === 1) { x = 'Review'; } else { x = 'Reviews'; }
