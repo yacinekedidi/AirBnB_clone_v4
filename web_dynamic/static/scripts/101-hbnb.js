@@ -178,7 +178,7 @@ $(function () {
                 let n = 'th';
                 if (myDate.getDate() < 4) { n = ordinals[myDate.getDate() - 1]; }
                 const output = myDate.getDate() + n + ' ' + (month[myDate.getMonth()]) + ' ' + myDate.getFullYear();
-                const name = user_n(review.user_id);
+                const name = userName(review.user_id);
                 const li = '<li><h3>From ' + name + 'the' + output + '</h3><p>' + review.text + '</p></li>';
                 ul.append(li);
                 if (data.length === 1) { x = 'Review'; } else { x = 'Reviews'; }
@@ -197,7 +197,7 @@ $(function () {
     // } // else
   });
 
-  $(function user_n (id) {
+  $(function userName (id) {
     $.get('http://0.0.0.0:5001/api/v1/users/' + id, function (data) {
       const name = data.first_name + ' ' + data.last_name;
       return name;
