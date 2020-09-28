@@ -132,20 +132,20 @@ $(function () {
       dataType: 'json',
       contentType: 'application/json',
       success: function (d) {
-          $('.places').empty();
-          if (d.length > 0) {
-            let s = '';
-            for (const place of d) {
-              s += '<article>';
-              s += '<div class="title_box">';
-              s += '<h2>' + place.name + '</h2>';
-              s += '<div class="price_by_night">$' + place.price_by_night + '</div>';
-              s += '</div>';
-              s += '<div class="information">';
-              s += '<div class="max_guest">' + place.max_guest + ' Guest';
-              if (place.max_guest !== 1) {
-                s += 's';
-              }
+        $('.places').empty();
+        if (d.length > 0) {
+          let s = '';
+          for (const place of d) {
+            s += '<article>';
+            s += '<div class="title_box">';
+            s += '<h2>' + place.name + '</h2>';
+            s += '<div class="price_by_night">$' + place.price_by_night + '</div>';
+            s += '</div>';
+            s += '<div class="information">';
+            s += '<div class="max_guest">' + place.max_guest + ' Guest';
+            if (place.max_guest !== 1) {
+              s += 's';
+            }
               s += '</div>';
               s += '<div class="number_rooms">' + place.number_rooms + ' Bedroom';
               if (place.number_rooms !== 1) {
