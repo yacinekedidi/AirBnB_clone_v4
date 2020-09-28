@@ -156,21 +156,21 @@ $(function () {
             if (place.number_bathrooms !== 1) {
               s += 's';
             }
-              s += '</div>';
-              s += '</div>';
-              s += '<div class="description">';
-              s += place.description;
-              s += '</div>';
-              s += '<div class="reviews"><h2></h2><span class="help_target" data-id=' + place.id + '>Show</span><ul></ul></div>';
-              s += '</article>';
-            } // FOR
-            $('section.places').append(s);
-            $('.reviews ul').hide();
-            $('span.help_target').click(function () {
-              const ul = $(this).parent('.reviews').children('ul');
-              const h2 = $(this).parent('.reviews').children('h2');
-              let x;
-              $.get('http://0.0.0.0:5001/api/v1/places/' + $(this).attr('data-id') + '/reviews', function (data) {
+            s += '</div>';
+            s += '</div>';
+            s += '<div class="description">';
+            s += place.description;
+            s += '</div>';
+            s += '<div class="reviews"><h2></h2><span class="help_target" data-id=' + place.id + '>Show</span><ul></ul></div>';
+            s += '</article>';
+          } // FOR
+          $('section.places').append(s);
+          $('.reviews ul').hide();
+          $('span.help_target').click(function () {
+            const ul = $(this).parent('.reviews').children('ul');
+            const h2 = $(this).parent('.reviews').children('h2');
+            let x;
+            $.get('http://0.0.0.0:5001/api/v1/places/' + $(this).attr('data-id') + '/reviews', function (data) {
                 for (const review of data) {
                   const myDate = new Date(review.created_at);
                   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
