@@ -146,16 +146,16 @@ $(function () {
             if (place.max_guest !== 1) {
               s += 's';
             }
-              s += '</div>';
-              s += '<div class="number_rooms">' + place.number_rooms + ' Bedroom';
-              if (place.number_rooms !== 1) {
-                s += 's';
-              }
-              s += '</div>';
-              s += '<div class="number_bathrooms">' + place.number_bathrooms + ' Bathroom';
-              if (place.number_bathrooms !== 1) {
-                s += 's';
-              }
+            s += '</div>';
+            s += '<div class="number_rooms">' + place.number_rooms + ' Bedroom';
+            if (place.number_rooms !== 1) {
+              s += 's';
+            }
+            s += '</div>';
+            s += '<div class="number_bathrooms">' + place.number_bathrooms + ' Bathroom';
+            if (place.number_bathrooms !== 1) {
+              s += 's';
+            }
               s += '</div>';
               s += '</div>';
               s += '<div class="description">';
