@@ -171,22 +171,22 @@ $(function () {
             const h2 = $(this).parent('.reviews').children('h2');
             let x;
             $.get('http://0.0.0.0:5001/api/v1/places/' + $(this).attr('data-id') + '/reviews', function (data) {
-                for (const review of data) {
-                  const myDate = new Date(review.created_at);
-                  const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                  const ordinals = ['st', 'nd', 'rd'];
-                  let n = 'th';
-                  if (myDate.getDate() < 4) { n = ordinals[myDate.getDate() - 1]; }
-                  const output = myDate.getDate() + n + ' ' + (month[myDate.getMonth()]) + ' ' + myDate.getFullYear();
-                  const li = '<li><h3>From yacine the ' + output + '</h3><p>' + review.text + '</p></li>';
-                  ul.append(li);
-                  if (data.length === 1) { x = 'Review'; } else { x = 'Reviews'; }
-                  h2.html(data.length + ' ' + x);
-                }
-              });
-              $(this).parent('.reviews').children('ul').toggle();
-              $(this).text($(this).text() === 'Hide' ? 'Show' : 'Hide');
-              ul.empty();
+              for (const review of data) {
+                const myDate = new Date(review.created_at);
+                const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                const ordinals = ['st', 'nd', 'rd'];
+                let n = 'th';
+                if (myDate.getDate() < 4) { n = ordinals[myDate.getDate() - 1]; }
+                const output = myDate.getDate() + n + ' ' + (month[myDate.getMonth()]) + ' ' + myDate.getFullYear();
+                const li = '<li><h3>From yacine the ' + output + '</h3><p>' + review.text + '</p></li>';
+                ul.append(li);
+                if (data.length === 1) { x = 'Review'; } else { x = 'Reviews'; }
+                h2.html(data.length + ' ' + x);
+              }
+            });
+            $(this).parent('.reviews').children('ul').toggle();
+            $(this).text($(this).text() === 'Hide' ? 'Show' : 'Hide');
+            ul.empty();
             });
           } else {
             $('.places article').remove();
