@@ -119,19 +119,19 @@ $(function () {
     // if (Object.keys(dictIds).length === 0) {
     $('.places article').remove();
     // } else {
-      const data = {
-        amenities: Object.keys(dictIds),
-        state: Object.keys(dictIdState),
-        city: Object.keys(dictIdCity)
-      };
+    const data = {
+      amenities: Object.keys(dictIds),
+      state: Object.keys(dictIdState),
+      city: Object.keys(dictIdCity)
+    };
 
-      $.ajax({
-        type: 'POST',
-        data: JSON.stringify(data),
-        url: 'http://0.0.0.0:5001/api/v1/places_search/',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function (d) {
+    $.ajax({
+      type: 'POST',
+      data: JSON.stringify(data),
+      url: 'http://0.0.0.0:5001/api/v1/places_search/',
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function (d) {
           $('.places').empty();
           if (d.length > 0) {
             let s = '';
