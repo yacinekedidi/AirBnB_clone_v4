@@ -116,9 +116,9 @@ $(function () {
   });
 
   $('button').click(function () {
-    if (Object.keys(dictIds).length === 0) {
+    //if (Object.keys(dictIds).length === 0) {
       $('.places article').remove();
-    } else {
+    //} else {
       const data = {
         amenities: Object.keys(dictIds),
         state: Object.keys(dictIdState),
@@ -193,6 +193,6 @@ $(function () {
           }
         } // SUCCESS
       }); // AJAX
-    } // else
+    //} // else
   });
 });
