@@ -97,7 +97,7 @@ $(function () {
         $.get('http://0.0.0.0:5001/api/v1/places/' + $(this).attr('data-id') + '/reviews', function (data) {
           for (const review of data) {
             const myDate = new Date(review.created_at);
-            const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'];
+            const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             const ordinals = ['st', 'nd', 'rd'];
             let n = 'th';
             if (myDate.getDate() < 4) { n = ordinals[myDate.getDate() - 1]; }
@@ -173,7 +173,7 @@ $(function () {
               $.get('http://0.0.0.0:5001/api/v1/places/' + $(this).attr('data-id') + '/reviews', function (data) {
                 for (const review of data) {
                   const myDate = new Date(review.created_at);
-                  const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'];
+                  const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
                   const ordinals = ['st', 'nd', 'rd'];
                   let n = 'th';
                   if (myDate.getDate() < 4) { n = ordinals[myDate.getDate() - 1]; }
