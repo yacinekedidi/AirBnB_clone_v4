@@ -116,9 +116,9 @@ $(function () {
   });
 
   $('button').click(function () {
-    //if (Object.keys(dictIds).length === 0) {
-      $('.places article').remove();
-    //} else {
+    // if (Object.keys(dictIds).length === 0) {
+    $('.places article').remove();
+    // } else {
       const data = {
         amenities: Object.keys(dictIds),
         state: Object.keys(dictIdState),
